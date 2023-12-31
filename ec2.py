@@ -93,10 +93,10 @@ class EC2InstancesManager:
 
 if __name__ == "__main__":
     ec2_manager = EC2InstancesManager()
-    # ec2_manager.create_instances('MySQL Server', 't2.micro', 1)
+    ec2_manager.create_instances('MySQL Server', 't2.micro', 1)
     ec2_manager.create_instances('MySQL Master', 't2.micro', 1)
     ec2_manager.create_instances('MySQL Slave', 't2.micro', 3)
     ec2_manager.create_instances('Proxy', 't2.micro', 1) # Change to t2.large
-    # ec2_manager.create_instances('Trusted Host', 't2.micro', 1) # Change to t2.large 
-    # ec2_manager.create_instances('Gatekeeper', 't2.micro', 1) # Change to t2.large 
+    ec2_manager.create_instances('Trusted Host', 't2.micro', 1) # Change to t2.large 
+    ec2_manager.create_instances('Gatekeeper', 't2.micro', 1) # Change to t2.large 
     ec2_manager.saveInstancesToCSV()

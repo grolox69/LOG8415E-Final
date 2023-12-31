@@ -12,11 +12,11 @@ def update_config_from_csv(csv_file_path, config_file_path):
 
         for row in reader:
             if row['name'] == 'MySQL Master':
-                master_ip = row['private_ip_address']
+                master_ip = row['private_dns_name']
             elif row['name'] == 'MySQL Slave':
-                slave_ips.append(row['private_ip_address'])
+                slave_ips.append(row['private_dns_name'])
             elif row['name'] == 'Proxy':
-                proxy_ip = row['private_ip_address']
+                proxy_ip = row['private_dns_name']
 
         # Read existing JSON configuration
         with open(config_file_path, 'r') as file:
@@ -54,7 +54,7 @@ class Benchmark(Deployer):
         self.connection.put('proxy/proxy_app.py', remote='/home/ubuntu/')
         self.connection.put('proxy/proxy_config.json', remote='/home/ubuntu/')
         self.connection.run('sudo apt-get update')
-        self.connection.run('sudo apt-get install -y python3')
+        self.connection.run('sudo apt-get install -y python3') # Add python venv
         self.connection.run('pip3 install mysql-connector-python ping3')
         self.connection.run('python3 proxy_setup.py')
 

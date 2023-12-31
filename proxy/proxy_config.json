@@ -1,9 +1,13 @@
 {
-    "proxy_ip": "<proxy_private_ip>",
+    "proxy_ip": "ip-172-31-87-215.ec2.internal",
     "proxy_port": 60001,
     "mysql_user": "root",
     "mysql_password": "root",
     "database_name": "sakila",
-    "mysql_master_ip": "<master_private_ip>",
-    "mysql_slave_ips": ["<data_node_1_private_ip>", "<data_node_2_private_ip>", "<data_node_3_private_ip>"]
+    "mysql_master_ip": "ip-172-31-81-210.ec2.internal",
+    "mysql_slave_ips": [
+        "ip-172-31-86-11.ec2.internal",
+        "ip-172-31-86-100.ec2.internal",
+        "ip-172-31-84-208.ec2.internal"
+    ]
 }

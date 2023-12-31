@@ -22,7 +22,7 @@ class Gatekeeper(Deployer):
         self.connection.put('gatekeeper/gatekeeper_app.py', remote='/home/ubuntu/')
         self.connection.put('gatekeeper/trusted_hosts.py', remote='/home/ubuntu/')
         self.connection.run('sudo apt-get update')
-        self.connection.run('sudo apt-get install -y python3')
+        self.connection.run('sudo apt-get install -y python3') # Add python venv
         self.connection.run('sudo apt install -y flask')
         self.connection.run('python3 gatekeeper_app.py')
         self.connection.run('python3 trusted_hosts.py')
