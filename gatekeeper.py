@@ -20,10 +20,12 @@ class Gatekeeper(Deployer):
 
         # Run Server benchmarking
         self.connection.put('gatekeeper/gatekeeper_app.py', remote='/home/ubuntu/')
+        self.connection.put('gatekeeper/trusted_hosts.py', remote='/home/ubuntu/')
         self.connection.run('sudo apt-get update')
         self.connection.run('sudo apt-get install -y python3')
         self.connection.run('sudo apt install -y flask')
         self.connection.run('python3 gatekeeper_app.py')
+        self.connection.run('python3 trusted_hosts.py')
 
 if __name__ == "__main__":
     mysql_server = Gatekeeper()
