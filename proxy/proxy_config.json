@@ -1,0 +1,9 @@
+{
+    "proxy_ip": "<proxy_private_ip>",
+    "proxy_port": 60001,
+    "mysql_user": "root",
+    "mysql_password": "root",
+    "database_name": "sakila",
+    "mysql_master_ip": "<master_private_ip>",
+    "mysql_slave_ips": ["<data_node_1_private_ip>", "<data_node_2_private_ip>", "<data_node_3_private_ip>"]
+}
